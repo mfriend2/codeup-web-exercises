@@ -8,13 +8,15 @@
 <script src="testing-js/test.js"></script>
 <script>
     "use strict";
-    console.log("Hello Umbriel!");
-    let codeup = "The best";
-    console.log(codeup);
-    codeup.toUpperCase();
-    console.log(codeup.toUpperCase());
-    console.log(5 + 5, "expect 10");
-    console.log(codeup.length);
+    // console.log("Hello Umbriel!");
+    // let codeup = "The best";
+    // console.log(codeup);
+    // codeup.toUpperCase();
+    // console.log(codeup.toUpperCase());
+    // console.log(5 + 5, "expect 10");
+    // console.log(codeup.length);
+
+    // BEGINNING OF ALERT, CONFIRM, PROMPT LESSON
 
     // Alert - alert(argument) - no return
     // Confirm - confirm(stringQuestion) - return a boolean value
@@ -23,13 +25,59 @@
     // let validName = confirm("You entered: " + name + ". Is this correct?";
     // console.log(validName);
 
-    alert("Hello Umbriel!");
+    // alert("Hello Umbriel!");
 
-    let decision = confirm("Are you sure you want to delete?");
-    console.log(decision);
+    // let decision = confirm("Are you sure you want to delete?");
+    // console.log(decision);
 
-    prompt("What is your name?");
-    console.log(name);
+    // prompt("What is your name?");
+    // console.log(name);
+
+    // BEGINNING OF FUNCTIONS LESSON
+
+    /*  function isString(input) {
+     return typeof input === "string";
+     }
+
+     console.log(isString("string"));
+
+     function isNumber(x) {
+     return typeof x === "number";
+     }
+
+      console.log(isNumber(5));
+     console.log(!isNumber(5));
+
+     var increment = function(x) {
+       return x + 1;
+     };
+
+     var two = increment(1);
+
+     console.log(increment(6)); */
+
+    /* Arrow Function - (Only needs return and curly braces if longer than one line)
+     const myArrowFunction = (firstName, lastName) => {
+       firstName = firstName.toUpperCase();
+       lastName = lastName.toUpperCase();
+        return firstName + " " + lastName;
+     }
+     console.log((myArrowFunction("michael", "friend"))); */
+
+    // Function Scope
+    /* let weekDays = 6  // This is a global scope
+     function scopeTest() {
+         let weekDays = 5; // This is a local scope
+         console.log(weekDays)
+     }
+
+     scopeTest(); */
+
+    // IIFE
+    /*
+    (function () {} ())
+    */
+
 
 </script>
 </body>
