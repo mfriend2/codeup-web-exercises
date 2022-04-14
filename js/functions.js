@@ -1,4 +1,5 @@
 "use strict";
+(function () {
 
 /**
  * TODO:
@@ -108,3 +109,4 @@ function applyDiscount(price, discount) {
 }
 
 console.log(applyDiscount(27.50, 10.50));
+} ())
