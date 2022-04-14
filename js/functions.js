@@ -86,7 +86,7 @@ console.log(calculateTip(18, 150));
  */
 let billTotal = prompt("How much is your total bill?");
 let tipPerc = prompt("What percentage of " + "$" + billTotal + " would you like to tip?");
-let tipTotal = alert("Your tip amount should be " + "$" + calculateTip(billTotal, tipPerc) + " in order to tip " + tipPerc + "%" + " of " + "$" + billTotal);
+let tipTotal = alert("Your tip amount should be " + "$" + calculateTip(billTotal, tipPerc).toFixed(2) + " in order to tip " + tipPerc + "%" + " of " + "$" + billTotal);
 
 /**
  * TODO:
