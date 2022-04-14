@@ -24,6 +24,7 @@
     sayHello("Mike");
     let helloMessage = sayHello("Mike");
     console.log(helloMessage);
+
     /**
      * TODO:
      * Store your name as a string in a variable named 'myName', and pass that
@@ -32,6 +33,7 @@
      */
     let myName = "Mike";
     console.log(sayHello(myName));
+
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
     var random = Math.floor((Math.random() * 3) + 1);
@@ -79,6 +81,7 @@
     }
 
     console.log(calculateTip(18, 150));
+
     /**
      * TODO:
      * Use prompt and alert in combination with your calculateTip function to
