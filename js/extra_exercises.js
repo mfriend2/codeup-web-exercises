@@ -52,7 +52,7 @@
     console.log(identity("Hello User!"));
 
     function isFive(input) {
-        return input === 5;
+        return input == 5;
     }
 
     console.log(isFive(5));
@@ -62,4 +62,40 @@
     }
 
     console.log(addFive(4));
+
+    function isMultipleOfFive(number) {
+        return (number % 5) == 0
+    }
+
+    console.log(isMultipleOfFive(15));
+
+    function isThree(number) {
+        return number == 3;
+    }
+
+    console.log(isThree(3));
+
+    function isMultipleOfThree(number) {
+        return (number % 3) == 0;
+    }
+
+    console.log(isMultipleOfThree(9));
+
+    function isMultipleOfThreeAndFive(number) {
+        return (number % 3) + (number % 5) == 0;
+    }
+
+    console.log(isMultipleOfThreeAndFive(15));
+
+    function isMultipleOf(target, n) {
+        return (target % n) == 0;
+    }
+
+    console.log(isMultipleOf(63, 3));
+
+    function isTrue(boolean) {
+        return boolean === true;
+    }
+
+    console.log(isTrue(true));
 })();
