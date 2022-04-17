@@ -98,4 +98,31 @@
     }
 
     console.log(isTrue(true));
+
+    function isFalse(boolean) {
+        return boolean === false;
+    }
+
+    console.log(isFalse(false));
+
+    function isTruthy(input) {
+        return input == true;
+    }
+
+    console.log(isTruthy(1));
+
+    function isFalsy(input) {
+        return input == false;
+    }
+
+    console.log(isFalsy(0));
+
+    function isVowel(letter) {
+        let vowels = ["a" , "e" , "i" , "o" , "u"];
+        return letter == vowels;
+    }
+
+    console.log(isVowel("a"));
+
+
 })();
