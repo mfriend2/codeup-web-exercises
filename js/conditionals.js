@@ -1,5 +1,7 @@
 "use strict";
 
+(function(){
+
 /* ########################################################################## */
 
 /**
@@ -200,3 +202,4 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //         }
 //     }
 // }
+})();
