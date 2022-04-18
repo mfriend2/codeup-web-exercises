@@ -118,10 +118,126 @@
     console.log(isFalsy(0));
 
     function isVowel(letter) {
-        let vowels = ["a" , "e" , "i" , "o" , "u"];
+        let vowels = ["a", "e", "i", "o", "u"];
         return vowels.indexOf(letter) != -1;
     }
 
     console.log(isVowel('a'));
 
+    function isConsonant(letter) {
+        let vowels = ["a", "e", "i", "o", "u"];
+        return vowels.indexOf(letter) == -1;
+    }
+
+    console.log(isConsonant("c"));
+
+    function isCapital(letter) {
+        if (letter === letter.toUpperCase()) {
+            return "Upper case";
+        } else {
+            return "Lower case";
+        }
+    }
+
+    console.log(isCapital("A"));
+
+    function isLowerCase(letter) {
+        if (letter === letter.toLowerCase()) {
+            return "Lower case";
+        } else {
+            return "Upper case";
+        }
+    }
+
+    console.log(isLowerCase("a"));
+
+    function hasLowerCase(string) {
+        return /[a-z]/.test(string)
+    }
+
+    console.log(hasLowerCase("Hello"));
+
+    function isSpace(letter) {
+        return letter === " ";
+    }
+
+    console.log(isSpace(" "));
+
+    function isZero(number) {
+        return number === 0;
+    }
+
+    console.log(isZero(0));
+
+    function lowerCase(string) {
+        return string.toLowerCase();
+    }
+
+    console.log(lowerCase("Hello"));
+
+    function double(num) {
+        return num * 2;
+    }
+
+    console.log(double(3));
+
+    function triple(num) {
+        return num * 3;
+    }
+
+    console.log(triple(3));
+
+    function quadruple(num) {
+        return num * 4;
+    }
+
+    console.log(quadruple(3));
+
+    function half(num) {
+        return (num / 2).toFixed(2);
+    }
+
+    console.log(half(3));
+
+    function subtract(a, b) {
+        return a - b;
+    }
+
+    console.log(subtract(100, 50));
+
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    console.log(multiply(100, 50));
+
+    function divide(a, b) {
+        return a / b;
+    }
+
+    console.log(divide(100, 50));
+
+    function remainder(a, b) {
+        return a % b;
+    }
+
+    console.log(remainder(100, 50));
+
+   function modulo(a, b) {
+       return a % b;
+   }
+
+    console.log(modulo(100, 50));
+
+   function cube(num) {
+       return num ** 3;
+   }
+
+    console.log(cube(3));
+
+   function squareRoot(number) {
+       return number ** .5;
+   }
+
+    console.log(squareRoot(36));
 })();
