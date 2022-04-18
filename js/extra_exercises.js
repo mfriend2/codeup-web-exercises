@@ -119,10 +119,9 @@
 
     function isVowel(letter) {
         let vowels = ["a" , "e" , "i" , "o" , "u"];
-        return letter == vowels;
+        return vowels.indexOf(letter) != -1;
     }
 
-    console.log(isVowel("a"));
-
+    console.log(isVowel('a'));
 
 })();
