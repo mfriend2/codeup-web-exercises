@@ -182,21 +182,21 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // }
 // yourNum()
 
-let conNum = confirm("Click 'OK' if you would like to enter a number.");
-if (conNum == true) {
-    let entNum = prompt("Please enter a number.");
-    if(typeof entNum == "number" || !isNaN(entNum)) {
-        entNum = parseFloat(entNum);
-        if(entNum % 2 === 0) {
-            alert(entNum + " is even.");
-        } else {
-            alert(entNum + " is odd.");
-        }
-        alert(entNum + " plus 100 is " + (entNum + 100));
-        if (entNum >= 0) {
-            alert(entNum + " is positive.");
-        } else {
-            alert(entNum + " is negative.");
-        }
-    }
-}
+// let conNum = confirm("Click 'OK' if you would like to enter a number.");
+// if (conNum == true) {
+//     let entNum = prompt("Please enter a number.");
+//     if(typeof entNum == "number" || !isNaN(entNum)) {
+//         entNum = parseFloat(entNum);
+//         if(entNum % 2 === 0) {
+//             alert(entNum + " is even.");
+//         } else {
+//             alert(entNum + " is odd.");
+//         }
+//         alert(entNum + " plus 100 is " + (entNum + 100));
+//         if (entNum >= 0) {
+//             alert(entNum + " is positive.");
+//         } else {
+//             alert(entNum + " is negative.");
+//         }
+//     }
+// }
