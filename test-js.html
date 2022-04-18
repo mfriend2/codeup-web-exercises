@@ -82,6 +82,121 @@
     })();
     */
 
+    // Conditionals
+
+    // If/Else
+
+    // let five = 5;
+    // if (five === 5) {
+    //     console.log("That was indeed 5.");
+    // }
+    //
+    // function isItANumber(num) {
+    //     if (typeof num === "number") {
+    //         return "That is a number!"
+    //     } else {
+    //         return "That is not a number!"
+    //     }
+    // }
+    //
+    // console.log(isItANumber(5));
+    // console.log(isItANumber("sheep"));
+    // console.log(isItANumber(true));
+    //
+    // let ownsCow = false;
+    // if (ownsCow === true) {
+    //     console.log("Going to milk Bessie");
+    // } else {
+    //     console.log("Going to King Soopers to get some milk.");
+    // }
+    //
+    // let ownsGoat = true;
+    // if (ownsCow === true) {
+    //     console.log("Going to milk Bessie!");
+    // } else if (ownsGoat === true) {
+    //     console.log("Going to milk Betty!");
+    // } else {
+    //     console.log("Going to King Soopers!");
+    // }
+    //
+    // function isThirtyFive(num) {
+    //     if (num === 35) {
+    //         return "That is 35!";
+    //     } else if (num < 35) {
+    //         return "That is less than 35!";
+    //     } else (num > 35)
+    //     {
+    //         return "That is greater than 35!";
+    //     }
+    // }
+    //
+    // console.log(isThirtyFive(35));
+
+    // Ternary Operator
+
+    // let weHaveMilk = true;
+    //
+    // function makeBowlOfCereal() {
+    //     return "Eating on some cereal!";
+    // }
+    //
+    // function goToStore() {
+    //     return "Going to HEB!";
+    // }
+    //
+    // let action = (weHaveMilk) ? makeBowlOfCereal() : goToStore();
+    // console.log(action);
+    //
+    // function isItANumber(num) {
+    //     return (typeof num === "number") ? "That is a number" : "That is not a number!";
+    // }
+    //
+    // console.log(isItANumber(2));
+
+    // Switch Statement
+
+    // let pizzaPref = prompt("What kind of pizza do you like?").toLowerCase().trim();
+    // switch (pizzaPref) {
+    //     case "pepperoni":
+    //         alert("That's my favorite!");
+    //         break;
+    //     case "cheese":
+    //         alert("Just plain cheese?");
+    //         break;
+    //     default:
+    //         alert("That's not my favorite but we will get that too!");
+    //         break;
+    // }
+    //
+    // let animalOwned = "dog";
+    // switch (animalOwned) {
+    //     case "cow":
+    //         console.log("Milking the cow!");
+    //         break;
+    //     case "goat":
+    //         console.log("Milking the goat!");
+    //         break;
+    //     case "camel":
+    //         console.log("Milking the camel!");
+    //         break;
+    //     default:
+    //         console.log("So how do we get milk?");
+    //         break;
+    // }
+
+    function favMeat(str) {
+        switch(str) {
+            case "olive loaf":
+                return alert("Congrats on your bold choice!");
+            case "brisket":
+                return alert("Congrats on the right choice!");
+            default:
+                return alert("Not my favorite but it's okay.");
+        }
+    }
+
+    favMeat(prompt("What is your favorite sandwich meat?").toLowerCase().trim());
+
 
 </script>
 </body>
