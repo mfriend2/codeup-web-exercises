@@ -9,7 +9,7 @@
         }
     }
 
-    console.log(showMultiplicationTable(2));
+    console.log(showMultiplicationTable(7));
 
     //  3
 
