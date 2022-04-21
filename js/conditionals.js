@@ -60,22 +60,22 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
-// function analyzeColor(color) {
-//     switch (color) {
-//         case "blue":
-//             return alert("Blue is the color of the ocean.");
-//         case "red":
-//             return alert("Red is the color of blood.");
-//         case "yellow":
-//             return alert("Yellow is the color of the sun.");
-//         case "green":
-//             return alert("Green is the color of grass.");
-//         default:
-//             return alert("I don't know much about " + color + ".");
-//     }
-// }
+function analyzeColor(color) {
+    switch (color) {
+        case "blue":
+            return ("Blue is the color of the ocean.");
+        case "red":
+            return ("Red is the color of blood.");
+        case "yellow":
+            return ("Yellow is the color of the sun.");
+        case "green":
+            return ("Green is the color of grass.");
+        default:
+            return ("I don't know much about " + color + ".");
+    }
+}
 
-// console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -84,8 +84,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
- // let favColor = prompt("What is your favorite color?").toLowerCase().trim();
- // analyzeColor(favColor);
+ let favColor = prompt("What is your favorite color?").toLowerCase().trim();
+ alert(analyzeColor(favColor));
 
 /* ########################################################################## */
 
@@ -109,24 +109,24 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-// function calculateTotal(luckyNum, total) {
-//     switch (luckyNum) {
-//         case 0:
-//             return total;
-//         case 1:
-//             return total - (total * .10);
-//         case 2:
-//             return total - (total * .25);
-//         case 3:
-//             return total - (total * .35);
-//         case 4:
-//             return total - (total * .50);
-//         case 5:
-//             return total - (total * 1);
-//     }
-// }
-//
-// console.log(calculateTotal(0, 87).toFixed(2));
+function calculateTotal(luckyNum, total) {
+    switch (luckyNum) {
+        case 1:
+            return total - (total * .10); // or total * .9
+        case 2:
+            return total - (total * .25); // or total * .75
+        case 3:
+            return total - (total * .35); // or total * .65
+        case 4:
+            return total - (total * .50); // or total * .50
+        case 5:
+            return total - (total * 1); // or 0
+        default:
+            return total;
+    }
+}
+
+console.log(calculateTotal(0, 87).toFixed(2));
 
 /**
  * TODO:
@@ -137,10 +137,10 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-//
-// let totalBill = prompt("What was your bill total?");
-// alert("Your lucky number was " + luckyNumber + "." + " Your total was " + "$" + totalBill + " before the discount was applied." + " Your final price after the discount is " + "$" + calculateTotal(luckyNumber, totalBill).toFixed(2));
+var luckyNumber = Math.floor(Math.random() * 6);
+
+let totalBill = parseFloat(prompt("What was your bill total?"));
+alert("Your lucky number was: " + luckyNumber + "." + " Your total was " + "$" + totalBill + " before the discount was applied." + " Your final price after the discount is " + "$" + calculateTotal(luckyNumber, totalBill).toFixed(2) + ".");
 
 /**
  * TODO:
@@ -184,22 +184,22 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // }
 // yourNum()
 
-// let conNum = confirm("Click 'OK' if you would like to enter a number.");
-// if (conNum == true) {
-//     let entNum = prompt("Please enter a number.");
-//     if(typeof entNum == "number" || !isNaN(entNum)) {
-//         entNum = parseFloat(entNum);
-//         if(entNum % 2 === 0) {
-//             alert(entNum + " is even.");
-//         } else {
-//             alert(entNum + " is odd.");
-//         }
-//         alert(entNum + " plus 100 is " + (entNum + 100));
-//         if (entNum >= 0) {
-//             alert(entNum + " is positive.");
-//         } else {
-//             alert(entNum + " is negative.");
-//         }
-//     }
-// }
+let conNum = confirm("Click 'OK' if you would like to enter a number.");
+if (conNum == true) {
+    let entNum = parseFloat(prompt("Please enter a number."));
+    if(typeof entNum == "number" || !isNaN(entNum)) {
+        entNum = parseFloat(entNum);
+        if(entNum % 2 === 0) {
+            alert(entNum + " is even.");
+        } else {
+            alert(entNum + " is odd.");
+        }
+        alert(entNum + " + 100 = " + (entNum + 100) + ".");
+        if (entNum >= 0) {
+            alert(entNum + " is positive.");
+        } else {
+            alert(entNum + " is negative.");
+        }
+    }
+}
 })();
