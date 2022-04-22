@@ -4,12 +4,12 @@
     //  2
 
     function showMultiplicationTable(num) {
-        for (let x = 1; num * x <= num * 10; x++) {
+        for (let x = 1; x <= 10; x++) {
             console.log(num + " x " + x + " = " + (num * x))
         }
     }
 
-    console.log(showMultiplicationTable(7));
+    showMultiplicationTable(7);
 
     //  3
 

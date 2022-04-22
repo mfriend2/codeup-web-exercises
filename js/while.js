@@ -43,9 +43,9 @@
 
     do {
         let custBuyCones = Math.floor(Math.random() * 5) + 1;
-        console.log("Customer bought " + custBuyCones + " cones.");
+        console.log("Customer wants to buy " + custBuyCones + " cone(s).");
         if (custBuyCones > cones) {
-            console.log("I can't sell you " + custBuyCones + ". I only have " + cones + ".");
+            console.log("Sorry I can't sell you " + custBuyCones + ". I only have " + cones + " left.");
             continue;
         }
         cones -= custBuyCones;
