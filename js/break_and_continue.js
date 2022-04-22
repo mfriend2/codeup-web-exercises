@@ -4,10 +4,9 @@
         let userOddNum;
         while (true) {
             userOddNum = parseFloat(prompt("Enter an odd number 1-50."));
-            if (userOddNum % 2 === 0) {
-                continue;
+            if (userOddNum % 2 !== 0 && userOddNum >= 1 && userOddNum <= 50) {
+                break;
             }
-            break;
         }
         console.log("Number to skip is " + userOddNum);
         for (let x = 0; x < 50; x++) {
