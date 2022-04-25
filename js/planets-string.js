@@ -29,11 +29,17 @@
     let planetsStr = planetsArray.join("<br>");
     console.log(planetsStr);
 
- let addUlList = "<ul>";
- let x;
-     for (x = 0; x < planetsArray.length; x++) {
-         addUlList += "<li>" + planetsArray[x] + "</li>";
-     }
-     addUlList += "</ul>";
+    // document.body.innerHTML += planetsStr;
+
+    let addUlList = "<ul>";
+    let x;
+    for (x = 0; x < planetsArray.length; x++) {
+        addUlList += "<li>" + planetsArray[x] + "</li>";
+    }
+    addUlList += "</ul>";
     console.log(addUlList);
+
+    // let planetsUL = "<ul><li>" + planetsArray.join("</li><li>") + "</li><ul>";
+    //  document.body.innerHTML += planetsUL;
+
 })();
