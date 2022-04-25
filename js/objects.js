@@ -117,8 +117,7 @@
      *      ...
      */
 
-    let amtOfBooks = 5;
-    for (let x = 0; x < amtOfBooks; x++) {
+    for (let x = 0; x < books.length; x++) {
         console.log("Book # " + (x + 1) + "\n" + "\n" + "Title: " + books[x].title + "\n" + "\n" + "Author: " + books[x].author.firstName + " " + books[x].author.lastName + "\n" + "---");
     }
 
