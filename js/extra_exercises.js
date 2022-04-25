@@ -360,15 +360,13 @@
 
     let total = 1;
     function factorial(num) {
-        let text = ''
+        let r = []
         for (let i = 0; i < num; i++) {
             total *= num - i;
-            text += i + 1;
+            r.push([i + 1]);
         }
-        text = text.toString();
-        text = text.split('')
-        text = text.join(' * ');
-        console.log(text + ' = ' + total);
+        r = r.join(' * ');
+        console.log(r + ' = ' + total);
     }
     factorial(5);
 
