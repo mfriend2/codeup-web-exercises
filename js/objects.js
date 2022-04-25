@@ -57,7 +57,7 @@
     const amtToDisc = 200;
     const amtOfShoppers = 3;
     function hebDisc () {
-        for (let x = 0; x < amtOfShoppers; x++) {
+        for (let x = 0; x < shoppers.length; x++) {
             if (shoppers[x].amount <= amtToDisc) {
                 console.log(shoppers[x].name + " received a discount of " + "$0.00." + "Their total for today is $" + shoppers[x].amount.toFixed(2) + ".");
             } else {
