@@ -161,6 +161,4 @@
 
     console.log(showBookInfo(book));
     console.log(showBookArrInfo(books));
-
-
 })();
