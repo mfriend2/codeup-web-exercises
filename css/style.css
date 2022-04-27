@@ -1,3 +1,71 @@
+.align-header {
+    text-align: center;
+}
 .fancy-header {
-    color: purple;
+    color: #FFE4C4;
+}
+.underline-header {
+    text-decoration: underline;
+}
+#container {
+    background-color: #CCCCCC;
+    background-image: url("https://images.pexels.com/photos/11095794/pexels-photo-11095794.jpeg?cs=srgb&dl=pexels-anastasiia-goncharova-11095794.jpg&fm=jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+ul {
+    list-style: none;
+    text-align: center;
+}
+ol {
+    list-style: none;
+    text-align: center;
+}
+li {
+    display: inline-block;
+}
+#container {
+    font-family: 'Tapestry', cursive;
+    text-align: center;
+}
+table {
+    border: 5px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+th {
+    padding: 10px;
+    font-size: 2em;
+    color: #F5F5DC;
+    text-align: center;
+    border-bottom: thick solid black;
+    border-right: thick solid black;
+}
+tr {
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+}
+td {
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+    border-bottom: thick solid black;
+    border-right: thick solid black;
+}
+header,main, footer {
+    color: #F5F5DC;
+}
+a:link {
+    color: #F00;
+}
+a:visited {
+    color: #000;
+}
+a:hover {
+    color: #00F;
+}
+a:active {
+    color: #0F0;
 }
