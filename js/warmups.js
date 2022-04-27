@@ -13,3 +13,13 @@ for (let x = 1; x < 101; x++){
         console.log(x);
     }
 }
+
+function retFirstLet(arr) {
+    let firstLet = ''
+    for (let str of arr) {
+    firstLet += str.substring(0,1);
+    }
+    return firstLet;
+}
+
+console.log(retFirstLet(["mike","augh","nono"]));
