@@ -14,8 +14,8 @@ body, html {
     font-weight: lighter;
 }
 .message-info {
-    background-color: lightsteelblue;
-    color: darkblue;
+    background-color: #CCDEFF;
+    color: #5451A8;
 }
 .message-success {
     background-color: palegreen;
