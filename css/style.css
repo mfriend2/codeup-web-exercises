@@ -1,18 +1,43 @@
+#container {
+    font-family: "Poppins", sans-serif;
+    margin: -8px;
+}
+header h1 {
+    font-size: 30px;
+}
+header {
+    background-color: #000000;
+    color: white;
+    padding: 12px;
+    font-weight: lighter;
+    font-size: 14px;
+}
 .align-header {
     text-align: center;
 }
-.fancy-header {
-    color: #FFE4C4;
+h3.fancy-header {
+    color: black;
 }
 .underline-header {
     text-decoration: underline;
 }
 #container {
     background-color: #CCCCCC;
-    background-image: url("https://images.pexels.com/photos/11095794/pexels-photo-11095794.jpeg?cs=srgb&dl=pexels-anastasiia-goncharova-11095794.jpg&fm=jpg");
+
+}
+#bg-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 125vh;
+    background-image: url("../img/pexels-gabriel-hohol-10543004.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 50%;
+    filter: blur(2px);
 }
 ul {
     list-style: none;
@@ -26,7 +51,6 @@ li {
     display: inline-block;
 }
 #container {
-    font-family: 'Tapestry', cursive;
     text-align: center;
 }
 table {
@@ -37,7 +61,7 @@ table {
 th {
     padding: 10px;
     font-size: 2em;
-    color: #F5F5DC;
+    color: black;
     text-align: center;
     border-bottom: thick solid black;
     border-right: thick solid black;
@@ -54,8 +78,16 @@ td {
     border-bottom: thick solid black;
     border-right: thick solid black;
 }
-header,main, footer {
-    color: #F5F5DC;
+main h3 {
+    color: black;
+}
+main, footer {
+    color: white;
+    background-color: #00000080;
+    padding: 12px;
+    font-weight: lighter;
+    font-size: 14px;
+    height: 900px;
 }
 a:link {
     color: #F00;
@@ -68,4 +100,10 @@ a:hover {
 }
 a:active {
     color: #0F0;
+}
+aside {
+    font-size: 12px;
+}
+body {
+
 }
