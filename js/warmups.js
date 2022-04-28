@@ -23,3 +23,11 @@ function retFirstLet(arr) {
 }
 
 console.log(retFirstLet(["mike","augh","nono"]));
+
+function retInOrder(string) {
+    let str = string.split('');
+    let sortStr = str.sort();
+    let newStr = sortStr.join('');
+    return console.log(newStr)
+}
+retInOrder("mike");
