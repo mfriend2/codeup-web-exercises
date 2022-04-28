@@ -6,13 +6,11 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 .message {
-    margin: .5em auto .5em auto;
+    margin: 10px;
     border: 1px solid lightgrey;
-    height: 20px;
-    width: 650px;
     border-radius: 5px;
     font-size: 14px;
-    padding: 7px 0px 2px 10px ;
+    padding: 8px;
     font-weight: lighter;
 }
 .message-info {
