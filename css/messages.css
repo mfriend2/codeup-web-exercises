@@ -8,11 +8,11 @@ body, html {
 .message {
     margin: .5em auto .5em auto;
     border: 1px solid lightgrey;
-    height: 25px;
+    height: 20px;
     width: 650px;
     border-radius: 5px;
     font-size: 14px;
-    padding: 5px 0px 0px 5px ;
+    padding: 7px 0px 2px 10px ;
     font-weight: lighter;
 }
 .message-info {
