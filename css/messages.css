@@ -15,17 +15,17 @@ body, html {
 }
 .message-info {
     background-color: #CCDEFF;
-    color: #5451A8;
+    color: #382F94;
 }
 .message-success {
-    background-color: palegreen;
-    color: green;
+    background-color: #CFF3DA;
+    color: #0E6832;
 }
 .message-warning {
-    background-color: lightgoldenrodyellow;
-    color: darkgoldenrod;
+    background-color: #FCFBC9;
+    color: #8D7A1A;
 }
 .message-error {
-    background-color: lightpink;
-    color: darkred;
+    background-color: #FAD2D6;
+    color: #933349;
 }
