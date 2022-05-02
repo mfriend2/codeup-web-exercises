@@ -31,8 +31,7 @@ fieldset {
 
 .width-80 {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     /* The element with this class should be 80% of the width and it must be centered */
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
 }
