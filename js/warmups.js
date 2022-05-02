@@ -31,3 +31,13 @@ function retInOrder(string) {
     return console.log(newStr)
 }
 retInOrder("mike");
+
+function sumOfArr (arr) {
+    let sum = 0;
+    for (let x = 0; x < arr.length; x++) {
+        sum += arr[x]
+    }
+    return sum;
+}
+
+console.log(sumOfArr([1, 2, 3, 4, 5]));
