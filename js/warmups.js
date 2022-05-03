@@ -76,7 +76,7 @@ console.log(returnProductEssentialDetails(product3));
 
 function returnAllProductEssentialDetails (arrObj) {
     for(let x = 0; x < arrObj.length; x++) {
-        console.log("The name of product #" + (x + 1) + " is " + arrObj[x].name + " price of this product in cents is $." + arrObj[x].priceInCents + ".");
+        console.log("The name of product #" + (x + 1) + " is " + arrObj[x].name + " price of this product in cents is " + arrObj[x].priceInCents + ".");
     }
 }
 returnAllProductEssentialDetails([product1, product2, product3]);
