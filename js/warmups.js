@@ -41,3 +41,42 @@ function sumOfArr (arr) {
 }
 
 console.log(sumOfArr([1, 2, 3, 4, 5]));
+
+let product1 = {
+    name: 'Hammer',
+    priceInCents: 400,
+    description: 'It is a a hammer.',
+    inventory: 25034
+}
+let product2 = {
+    name: 'Computer',
+    priceInCents: 40000,
+    description: 'It is a computer.',
+    inventory: 33000
+}
+
+let product3 = {
+    name: 'Ruler',
+    priceInCents: 1000,
+    description: 'It is a ruler.',
+    inventory: 2200
+}
+
+function returnProductEssentialDetails (object) {
+    let product;
+    return product = {
+        name: object.name,
+        priceInCents: object.priceInCents,
+    };
+}
+
+console.log(returnProductEssentialDetails(product1));
+console.log(returnProductEssentialDetails(product2));
+console.log(returnProductEssentialDetails(product3));
+
+function returnAllProductEssentialDetails (arrObj) {
+    for(let x = 0; x < arrObj.length; x++) {
+        console.log("The name of product #" + (x + 1) + " is " + arrObj[x].name + " price of this product in cents is $." + arrObj[x].priceInCents + ".");
+    }
+}
+returnAllProductEssentialDetails([product1, product2, product3]);
