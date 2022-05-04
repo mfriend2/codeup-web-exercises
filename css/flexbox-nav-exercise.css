@@ -30,7 +30,7 @@ nav ul li:nth-child(5) {
     font-size: 3em;
     padding: .2em;
     position: relative;
-    left: -65px;
+    left: -60px;
 }
 nav a:hover {
     color: blue;
