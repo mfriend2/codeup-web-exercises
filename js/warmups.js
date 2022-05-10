@@ -126,3 +126,15 @@ function tallestObj (arr) {
 }
 
 console.log(tallestObj(hamsters));
+
+function mostColorful (arr) {
+    let colorfulHam = {fur: ''};
+    for (let hamster of arr) {
+        if (hamster.fur.length > colorfulHam.fur.length) {
+            colorfulHam = hamster;
+        }
+    }
+    return colorfulHam;
+}
+
+console.log(mostColorful(hamsters));
