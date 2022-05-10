@@ -138,3 +138,17 @@ function mostColorful (arr) {
 }
 
 console.log(mostColorful(hamsters));
+
+// For Loop Example
+
+function mostColorfulFor (arr) {
+    let mostColors = arr[0];
+    for (let x = 1; x < arr.length; x++) {
+        if (arr[x].fur.length > mostColors.fur.length) {
+            mostColors = arr[x];
+        }
+    }
+    return mostColors;
+}
+
+console.log(mostColorfulFor(hamsters));
