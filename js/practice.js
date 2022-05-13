@@ -161,11 +161,23 @@ console.log(makeSandwichObjects(breads, fillings));
 let fruits = ["apple", "banana", "orange", "apple", "pineapple"];
 
 function AllIndexesOf (arr, val) {
-    if (arr.includes(val) === true) {
-        return arr.indexOf(val);
-    } else {
-        return [];
-    }
+let index = [];
+for (let x = 0; x < arr.length; x++) {
+    if (arr[x] === val) index.push(x)
+}
+return index;
 }
 
 console.log(AllIndexesOf(fruits, "apple"));
+
+let bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+function removeAll (arr, val) {
+    for (let x = 0; x < arr.length; x++) {
+        if(arr[x] === val) arr.splice(x, 1);
+    }
+    return arr;
+}
+
+console.log(removeAll(bugs, "mosquito"));
+
