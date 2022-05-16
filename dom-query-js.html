@@ -15,7 +15,7 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
-<button type="submit" id="dbid-button">Change DBID #1 Color!</button>
+<!--<button type="submit" id="dbid-button">Change DBID #1 Color!</button>-->
 <h2 id="sub-header">Hello Again.</h2>
 <button type="submit" id="sub-header-button">Change Sub Header Color!</button>
 <p class="sub-paragraph">
@@ -56,7 +56,10 @@
         // TODO: Set text color on every other list item to grey
         document.getElementById("li-button").addEventListener("click", function () {
                 for (let x = 0; x < listItems.length; x++) {
-                    if (x % 2 === 0) {
+                    if (x === 0) {
+                        document.querySelector("[data-dbid='1']").style.color = "blue";
+                    }
+                    else if (x % 2 === 0) {
                         listItems[x].style.color = "grey";
                     } else {
                         continue;
@@ -66,9 +69,9 @@
 
 
         // TODO: Set text color of li with dbid = 1 to blue
-        document.getElementById("dbid-button").addEventListener("click", function () {
-            document.querySelector("[data-dbid='1']").style.color = "blue";
-        })
+        // document.getElementById("dbid-button").addEventListener("click", function () {
+        //     document.querySelector("[data-dbid='1']").style.color = "blue";
+        // })
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
