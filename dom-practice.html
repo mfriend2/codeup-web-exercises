@@ -64,6 +64,7 @@
     <button id="submitString">Add</button>
     <p id="madLib">Hello</p>
 </div>
+
 <script>
 
     // TODO: Prompt the user to enter a color. Select the first div with the class of "question", and change the font color to the users input.
@@ -71,6 +72,11 @@
     let listOfDivs = document.getElementsByTagName("div");
     let firstDiv = listOfDivs[0];
     firstDiv.style.color = userInp;
+    let colorChangeButton = document.getElementById("changeColor");
+    colorChangeButton.addEventListener('click', function () {
+        document.body.style.backgroundColor = document.querySelector("#color").value;
+    })
+    // console.log(document.querySelector('#color').value);
 </script>
 </body>
 </html>
