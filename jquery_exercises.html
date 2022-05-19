@@ -7,31 +7,49 @@
 <body>
 <h1 id="main-header" class="header fs-1">Hello JQuery</h1>
 <p id="main-paragraph" class="paragraph codeup">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi deserunt dolorum error ex officiis omnis sed sit soluta suscipit! Adipisci culpa delectus dolorum enim eos est, nisi quam vitae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi deserunt dolorum error ex officiis omnis sed sit
+    soluta suscipit! Adipisci culpa delectus dolorum enim eos est, nisi quam vitae?
 </p>
 <ul id="codeup" class="ul">
     <li id="li-1" class="li">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dicta dolores iure modi nam, nisi tenetur. Cupiditate eaque harum, iure mollitia necessitatibus officiis, omnis quae, quidem quo sit suscipit ullam.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dicta dolores iure modi nam, nisi tenetur.
+        Cupiditate eaque harum, iure mollitia necessitatibus officiis, omnis quae, quidem quo sit suscipit ullam.
     </li>
 </ul>
 <div id="main-div" class="div codeup">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, ea eius eligendi eos incidunt sint. Eius error illum iure maiores perferendis sed. Ab alias maxime nulla optio quae voluptate, voluptates?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, ea eius eligendi eos incidunt sint. Eius error illum
+    iure maiores perferendis sed. Ab alias maxime nulla optio quae voluptate, voluptates?
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
     $(function () {
-        alert('The DOM has finished loading!')
-        let headerContent = $('#main-header').html();
-        alert(headerContent);
-        let paragraphContent = $('#main-paragraph').html();
-        alert(paragraphContent);
-        $('.codeup').css('border', '1px solid red');
-        $('li').css('font-size', '20px');
-        let multipleEl = $('h1, p, li');
-        let hElContent = $('h1').html();
-        multipleEl.css('background-color', 'limegreen');
-        alert(hElContent);
+        // alert('The DOM has finished loading!')
+        // let headerContent = $('#main-header').html();
+        // alert(headerContent);
+        // let paragraphContent = $('#main-paragraph').html();
+        // alert(paragraphContent);
+        // $('.codeup').css('border', '1px solid red');
+        // $('li').css('font-size', '20px');
+        // let multipleEl = $('h1, p, li');
+        // let hElContent = $('h1').html();
+        // multipleEl.css('background-color', 'limegreen');
+        // alert(hElContent);
+        $('h1').click(function () {
+            $(this).css('background-color', 'lightblue');
+        });
+        $('p').dblclick(function () {
+            $(this).css('font-size', '18px');
+        });
+        $('li').hover(
+            function () {
+                $(this).css('color', 'red');
+            },
+            function () {
+                $(this).css('color', 'black');
+            }
+        );
     });
 </script>
 </body>
