@@ -77,6 +77,17 @@
         document.body.style.backgroundColor = document.querySelector("#color").value;
     })
     // console.log(document.querySelector('#color').value);
+    let ul = document.getElementById("todosList");
+    let ulAddBtn = document.getElementById('addTodo');
+    let typedItem = document.getElementById('todo');
+    let addedItem = typedItem.value;
+    ulAddBtn.addEventListener('click', function () {
+        if (typedItem.value === '') {
+            alert('Please enter something to add');
+        } else {
+            ul.innerHTML += '<li>' + typedItem.value + '</li>';
+        }
+    });
 </script>
 </body>
 </html>
