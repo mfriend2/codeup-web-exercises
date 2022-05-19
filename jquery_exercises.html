@@ -20,21 +20,19 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-    // $(function () {
-    //     alert('The DOM has finished loading!')
-    // });
-    let headerContent = $('#main-header').html();
-    alert(headerContent);
-    let paragraphContent = $('#main-paragraph').html();
-    alert(paragraphContent);
-    $('.codeup').css('border', '1px solid red');
-    $('li').css('font-size', '20px');
-    let multipleEl = $('h1, p, li');
-    let hElContent = $('h1').html();
-    multipleEl.css('background-color', 'limegreen')
-    alert(hElContent)
-
-
+    $(function () {
+        alert('The DOM has finished loading!')
+        let headerContent = $('#main-header').html();
+        alert(headerContent);
+        let paragraphContent = $('#main-paragraph').html();
+        alert(paragraphContent);
+        $('.codeup').css('border', '1px solid red');
+        $('li').css('font-size', '20px');
+        let multipleEl = $('h1, p, li');
+        let hElContent = $('h1').html();
+        multipleEl.css('background-color', 'limegreen');
+        alert(hElContent);
+    });
 </script>
 </body>
 </html>
