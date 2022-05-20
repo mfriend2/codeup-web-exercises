@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<style>
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+        font-weight: bold;
+        padding: 25px;
+    }
+</style>
+<body id="container">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<main>
+    <div class="header">ENTER YOUR GAME CODE!</div>
+</main>
+<script>
+    "use strict";
+    $(document).keyup(function (event) {
+        console.log(event.keyCode);
+    });
+
+    let mkCode = [65, 66, 65, 67, 65, 66, 66]
+    let contraCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    let sanAndreasCode = [82, 49, 82, 50, 76, 49, 88, 37, 40, 39, 38, 37, 40, 39, 38]
+    let enteredCode = [];
+    $(document).keyup(function (e) {
+        enteredCode.push(e.keyCode);
+        console.log(enteredCode);
+        checkMkCode();
+        checkContraCode();
+        checkSanAndreasCode();
+    });
+
+    function checkContraCode() {
+        console.log(enteredCode.toString(), contraCode.toString())
+        if (enteredCode.length !== contraCode.length) {
+            return;
+        }
+        if (enteredCode.toString() === contraCode.toString()) {
+            alert("YOU HAVE ADDED 30 LIVES!");
+            let backImg = 'img/contra-back.gif'
+            $('#container').css('background-image', 'url(' + backImg + ')');
+            let audio = new Audio("sounds/contra.mp3");
+            audio.play();
+            $('.header').css('display', 'none');
+        }
+        if (enteredCode.toString() !== contraCode.toString()) {
+            checkSanAndreasCode();
+        }
+    };
+    function checkSanAndreasCode() {
+        if (enteredCode.length !== sanAndreasCode.length) {
+            return;
+        }
+        if (enteredCode.toString() === sanAndreasCode.toString()) {
+            alert("FULL HEALTH, MONEY AND +$250,000");
+            let backImg = 'img/sanAnd-back.gif'
+            $('#container').css('background-image', 'url(' + backImg + ')');
+            $('.header').css('display', 'none');
+            let audio = new Audio('sounds/san-andreas.mp3');
+            audio.play();
+        }
+        if (enteredCode.toString() !== sanAndreasCode.toString()) {
+            alert("WRONG CODE TRY AGAIN!");
+            location.reload();
+        }
+    };
+    function checkMkCode() {
+        if (enteredCode.length !== mkCode.length) {
+            return;
+        }
+        if (enteredCode.toString() === mkCode.toString()) {
+            alert("FATALITY!");
+            let backImg = 'img/mk-back.gif'
+            $('#container').css('background-image', 'url(' + backImg + ')');
+            $('.header').css('display', 'none');
+            let audio = new Audio('sounds/mk.mp3');
+            audio.play();
+        }
+        if (enteredCode.toString() !== mkCode.toString()) {
+            checkContraCode();
+        }
+    };
+
+
+</script>
+</body>
+</html>
