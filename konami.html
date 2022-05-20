@@ -36,6 +36,8 @@
     });
 
     let codCode = [67, 79, 68];
+    let gow2Code = [71, 79, 87, 50];
+    let fall3Code = [70, 65, 76, 76, 51];
     let mkCode = [65, 66, 65, 67, 65, 66, 66];
     let contraCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
     let sanAndreasCode = [82, 49, 82, 50, 76, 49, 88, 37, 40, 39, 38, 37, 40, 39, 38];
@@ -44,6 +46,8 @@
         enteredCode.push(e.keyCode);
         console.log(enteredCode);
         checkCodCode();
+        checkGow2Code()
+        checkFall3Code()
         checkMkCode();
         checkContraCode();
         checkSanAndreasCode();
@@ -122,19 +126,55 @@
             $("#root").css('display', 'none');
         }
         if (enteredCode.toString() !== codCode.toString()) {
+            checkGow2Code();
+        }
+    };
+
+    function checkFall3Code() {
+        if (enteredCode.length !== fall3Code.length) {
+            return;
+        }
+        if (enteredCode.toString() === fall3Code.toString()) {
+            let backImg = 'img/fall3.gif'
+            $('#container').css('background-image', 'url(' + backImg + ')');
+            $('.header').css('display', 'none');
+            let audio = new Audio('sounds/fall3.mp3');
+            audio.play();
+            $("#text").css('display', 'none');
+            $("#root").css('display', 'none');
+        }
+        if (enteredCode.toString() !== fall3Code.toString()) {
             checkMkCode();
         }
     };
 
-    drawLines();
+    function checkGow2Code() {
+        if (enteredCode.length !== gow2Code.length) {
+            return;
+        }
+        if (enteredCode.toString() === gow2Code.toString()) {
+            let backImg = 'img/gow2.gif'
+            $('#container').css('background-image', 'url(' + backImg + ')');
+            $('.header').css('display', 'none');
+            let audio = new Audio('sounds/gow2.mp3');
+            audio.play();
+            $("#text").css('display', 'none');
+            $("#root").css('display', 'none');
+        }
+        if (enteredCode.toString() !== gow2Code.toString()) {
+            checkFall3Code();
+        }
+    };
 
-    function getHeight() {
-        return (
-            window.innerHeight ||
-            document.documentElement.clientHeight ||
-            document.body.clientHeight
-        );
-    }
+    // drawLines();
+    //
+    // function getHeight() {
+    //     return (
+    //         window.innerHeight ||
+    //         document.documentElement.clientHeight ||
+    //         document.body.clientHeight
+    //     );
+    // }
 
     // function drawLines() {
     //     const lines = document.getElementsByClassName("line");
