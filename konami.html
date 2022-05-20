@@ -35,6 +35,7 @@
         console.log(event.keyCode);
     });
 
+    let wzCode = [87, 90];
     let codCode = [67, 79, 68];
     let gow2Code = [71, 79, 87, 50];
     let fall3Code = [70, 65, 76, 76, 51];
@@ -45,9 +46,10 @@
     $(document).keyup(function (e) {
         enteredCode.push(e.keyCode);
         console.log(enteredCode);
+        checkWzCode();
         checkCodCode();
-        checkGow2Code()
-        checkFall3Code()
+        checkGow2Code();
+        checkFall3Code();
         checkMkCode();
         checkContraCode();
         checkSanAndreasCode();
@@ -163,6 +165,24 @@
         }
         if (enteredCode.toString() !== gow2Code.toString()) {
             checkFall3Code();
+        }
+    };
+
+    function checkWzCode() {
+        if (enteredCode.length !== wzCode.length) {
+            return;
+        }
+        if (enteredCode.toString() === wzCode.toString()) {
+            let backImg = 'img/wz.gif'
+            $('#container').css('background-image', 'url(' + backImg + ')');
+            $('.header').css('display', 'none');
+            let audio = new Audio('sounds/wz.mp3');
+            audio.play();
+            $("#text").css('display', 'none');
+            $("#root").css('display', 'none');
+        }
+        if (enteredCode.toString() !== wzCode.toString()) {
+            checkCodCode();
         }
     };
 
