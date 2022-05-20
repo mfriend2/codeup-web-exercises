@@ -35,13 +35,15 @@
         console.log(event.keyCode);
     });
 
-    let mkCode = [65, 66, 65, 67, 65, 66, 66]
+    let codCode = [67, 79, 68];
+    let mkCode = [65, 66, 65, 67, 65, 66, 66];
     let contraCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
-    let sanAndreasCode = [82, 49, 82, 50, 76, 49, 88, 37, 40, 39, 38, 37, 40, 39, 38]
+    let sanAndreasCode = [82, 49, 82, 50, 76, 49, 88, 37, 40, 39, 38, 37, 40, 39, 38];
     let enteredCode = [];
     $(document).keyup(function (e) {
         enteredCode.push(e.keyCode);
         console.log(enteredCode);
+        checkCodCode();
         checkMkCode();
         checkContraCode();
         checkSanAndreasCode();
@@ -106,6 +108,24 @@
         }
     };
 
+    function checkCodCode() {
+        if (enteredCode.length !== codCode.length) {
+            return;
+        }
+        if (enteredCode.toString() === codCode.toString()) {
+            let backImg = 'img/cod-back.gif'
+            $('#container').css('background-image', 'url(' + backImg + ')');
+            $('.header').css('display', 'none');
+            let audio = new Audio('sounds/cod.mp3');
+            audio.play();
+            $("#text").css('display', 'none');
+            $("#root").css('display', 'none');
+        }
+        if (enteredCode.toString() !== codCode.toString()) {
+            checkMkCode();
+        }
+    };
+
     drawLines();
 
     function getHeight() {
@@ -116,27 +136,27 @@
         );
     }
 
-    function drawLines() {
-        const lines = document.getElementsByClassName("line");
-        if (lines.length) {
-            for (let i = 0; i < lines.length; i++) {
-                document.body.removeChild(lines[i]);
-            }
-        }
-
-        for (i = 0; i < getHeight() / 10; i++) {
-            const line = document.createElement("div");
-            line.className = `line line-${i}`;
-            line.style.top = `${i * 10}px`;
-            const time = Math.random() * 5;
-            line.style.animation = `lines ${time}s infinite`;
-            document.body.appendChild(line);
-        }
-    }
-
-    window.onresize = function (event) {
-        drawLines();
-    };
+    // function drawLines() {
+    //     const lines = document.getElementsByClassName("line");
+    //     if (lines.length) {
+    //         for (let i = 0; i < lines.length; i++) {
+    //             document.body.removeChild(lines[i]);
+    //         }
+    //     }
+    //
+    //     for (let i = 0; i < getHeight() / 10; i++) {
+    //         const line = document.createElement("div");
+    //         line.className = `line line-${i}`;
+    //         line.style.top = `${i * 10}px`;
+    //         const time = Math.random() * 5;
+    //         line.style.animation = `lines ${time}s infinite`;
+    //         document.body.appendChild(line);
+    //     }
+    // }
+    //
+    // window.onresize = function (event) {
+    //     drawLines();
+    // };
 
     // CODE FOR VHS SCREEN FROM https://codepen.io/shorinamaria/pen/egJmeY
 
