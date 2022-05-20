@@ -90,8 +90,13 @@
             $("#root").css('display', 'none');
         }
         if (enteredCode.toString() !== sanAndreasCode.toString()) {
-            alert("WRONG CODE TRY AGAIN!");
-            location.reload();
+            let backImg = 'img/try-again.gif'
+            $('#container').css('background-image', 'url(' + backImg + ')');
+            $('.header').css('display', 'none');
+            let audio = new Audio('sounds/try-again.mp3');
+            audio.play();
+            $("#text").css('display', 'none');
+            $("#root").css('display', 'none');
         }
     };
 
