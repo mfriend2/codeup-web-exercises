@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>FAQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <dl>
-        <dt>National Park FAQ</dt>
-        <dt>How many people visit the National Parks each year?</dt>
-        <dd>In 2021 297,115,406 people visited the National Parks.</dd>
-        <dt>What is the most visited National Park?</dt>
-        <dd>Blue Ridge Parkway was the most visited National Park in 2021 with 15.9 million visits.</dd>
-        <dt>Who is the director of the National Park Service?</dt>
-        <dd>Charles F. Sams III is the director of the National Park Service.</dd>
-        <dt>How many employees are in the National Park Service?</dt>
-        <dd>Around 20,000 employees and more than 279,000 volunteers.</dd>
-        <dt>Which National Park was the nations first?</dt>
-        <dd>Yellowstone National Park is the nations first ever National Park.</dd>
-        <dt>How many acres are in the National Park System?</dt>
-        <dd>Over 85 million acres of land are in the National Park System.</dd>
-        <dt>What is the largest National Park?</dt>
-        <dd>Wrangell-St. Elias National Park and Reserve in Alaska is the largest National Park.</dd>
-        <dt>What is the smallest National Park?</dt>
-        <dd>Thaddeus Kosciuszko National Memorial is the smallest National Park.</dd>
-        <dt>How many of the highest waterfalls are located at Yosemite National Park?</dt>
-        <dd>3 of the highest waterfalls in the world are located at Yosemite National Park.</dd>
-        <dt>Which of the National Parks contains one of the Natural Wonders of the World?</dt>
-        <dd>The Grand Canyon in Grand Canyon National Park is one of the 7 Natural Wonders of the World.</dd>
-    </dl>
-    <button type="button" id="toggle-answers">Show Answers</button>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<dl>
+    <dt>National Park FAQ</dt>
+    <dt>How many people visit the National Parks each year?</dt>
+    <dd>In 2021 297,115,406 people visited the National Parks.</dd>
+    <dt>What is the most visited National Park?</dt>
+    <dd>Blue Ridge Parkway was the most visited National Park in 2021 with 15.9 million visits.</dd>
+    <dt>Who is the director of the National Park Service?</dt>
+    <dd>Charles F. Sams III is the director of the National Park Service.</dd>
+    <dt>How many employees are in the National Park Service?</dt>
+    <dd>Around 20,000 employees and more than 279,000 volunteers.</dd>
+    <dt>Which National Park was the nations first?</dt>
+    <dd>Yellowstone National Park is the nations first ever National Park.</dd>
+    <dt>How many acres are in the National Park System?</dt>
+    <dd>Over 85 million acres of land are in the National Park System.</dd>
+    <dt>What is the largest National Park?</dt>
+    <dd>Wrangell-St. Elias National Park and Reserve in Alaska is the largest National Park.</dd>
+    <dt>What is the smallest National Park?</dt>
+    <dd>Thaddeus Kosciuszko National Memorial is the smallest National Park.</dd>
+    <dt>How many of the highest waterfalls are located at Yosemite National Park?</dt>
+    <dd>3 of the highest waterfalls in the world are located at Yosemite National Park.</dd>
+    <dt>Which of the National Parks contains one of the Natural Wonders of the World?</dt>
+    <dd>The Grand Canyon in Grand Canyon National Park is one of the 7 Natural Wonders of the World.</dd>
+</dl>
+<button type="button" id="toggle-answers">Show Answers</button>
 <h3>Yellow Stone National Park</h3>
 <ul>
     <li>Larger than Rhode Island and Delaware combined.</li>
@@ -52,27 +55,50 @@
     <li>Contains 77 mountain peaks over 12,000ft high within the park boundaries.</li>
 </ul>
 <button type="button" id="highlighter">Highlight</button>
+<section class="d-flex justify-content-center pb-5">
+    <div class="frame d-flex flex-column">
+        <img src="img/giraffe.jpg" alt="giraffe" style="border: 10px solid black">
+        <button id="left-btn">Swap</button>
+    </div>
+    <div class="frame d-flex flex-column">
+        <img src="img/splatter.jpg" alt="splatter" style="border: 10px solid black">
+        <button id="middle-btn">Swap</button>
+    </div>
+    <div class="frame d-flex flex-column">
+        <img src="img/paint-brushes.jpg" alt="paint-brushes" style="border: 10px solid black">
+        <button id="right-btn">Swap</button>
+    </div>
+</section>
 <style>
     .invisible {
         visibility: hidden;
     }
+
     .clicked {
         background: yellow;
     }
+
     .header {
         font-size: large;
         font-weight: bold;
         padding: 10px;
     }
+
     .main-header {
         font-size: x-large;
         font-weight: bold;
+    }
+
+    .frame {
+        height: 300px;
+        width: 200px;
+        margin: 10px;
     }
 </style>
 <script>
     $('dd').addClass('invisible');
     $('#toggle-answers').click(function () {
-      $('dd').toggleClass('invisible');
+        $('dd').toggleClass('invisible');
     });
     $('dt').click(function () {
         $(this).toggleClass('clicked');
@@ -80,16 +106,51 @@
     $('dt').addClass('header');
     $('dt').first().addClass('main-header');
     $('#highlighter').click(function () {
-        $('ul').each(function (index, ul){
-        $(ul).children().last().css('background-color', 'greenyellow');
+        $('ul').each(function (index, ul) {
+            $(ul).children().last().css('background-color', 'greenyellow');
         });
     });
     $('h3').click(function () {
-       $(this).next().children().css('font-weight', 'bold')
+        $(this).next().children().css('font-weight', 'bold')
     });
     $('li').click(function () {
         $(this).parent().children().first().css('color', 'blue')
     });
+
+    $('#left-btn').click(function () {
+        let firstPic = $('#left-btn').parent().children().first().attr('src');
+        let middlePic = $('#middle-btn').parent().children().first().attr('src');
+        let lastPic = $('#right-btn').parent().children().first().attr('src');
+        $(this).parent().children().first().attr('src', middlePic);
+        $(this).parent().next().children().first().attr('src', firstPic);
+    });
+    $('#right-btn').click(function () {
+        let firstPic = $('#left-btn').parent().children().first().attr('src');
+        let middlePic = $('#middle-btn').parent().children().first().attr('src');
+        let lastPic = $('#right-btn').parent().children().first().attr('src');
+        $(this).parent().children().first().attr('src', middlePic);
+        $(this).parent().prev().children().first().attr('src', lastPic);
+    });
+    $('#middle-btn').click(function () {
+        let firstPic = $('#left-btn').parent().children().first().attr('src');
+        let middlePic = $('#middle-btn').parent().children().first().attr('src');
+        let lastPic = $('#right-btn').parent().children().first().attr('src');
+        if (Math.random() > .5) {
+            $(this).parent().children().first().attr('src', firstPic);
+            $(this).parent().prev().children().first().attr('src', middlePic);
+        }
+        else {
+            $(this).parent().children().first().attr('src', lastPic);
+            $(this).parent().next().children().first().attr('src', middlePic);
+        }
+    });
+
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
 </body>
 </html>
