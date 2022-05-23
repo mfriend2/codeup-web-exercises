@@ -87,6 +87,32 @@
             ul.innerHTML += '<li>' + typedItem.value + '</li>';
         }
     });
+
+    let h1Btn = document.getElementById('toggleH1');
+
+    function changeH1Size () {
+        let allH1s = document.getElementsByTagName('h1');
+        for (let h1 of allH1s) {
+            if (h1.style.fontSize !== '10px') {
+                h1.style.fontSize = '10px';
+            } else {
+                h1.style.fontSize = '20px';
+            }
+        }
+    };
+
+    let intervalID = setInterval(changeH1Size, 1000);
+
+    h1Btn.addEventListener('click', function () {
+        if (intervalID === null) {
+            intervalID = setInterval(changeH1Size, 1000);
+        } else {
+            clearInterval(intervalID);
+            intervalID = null;
+        }
+    });
+
+
 </script>
 </body>
 </html>
