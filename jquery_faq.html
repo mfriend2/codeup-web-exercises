@@ -37,6 +37,15 @@
     .clicked {
         background: yellow;
     }
+    .header {
+        font-size: large;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .main-header {
+        font-size: x-large;
+        font-weight: bold;
+    }
 </style>
 <script>
     $('#toggle-answers').click(function () {
@@ -45,6 +54,8 @@
     $('dt').click(function () {
         $(this).toggleClass('clicked');
     });
+    $('dt').addClass('header');
+    $('dt').first().addClass('main-header');
 </script>
 </body>
 </html>
