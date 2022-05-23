@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <dl>
+        <dt>National Park FAQ</dt>
+        <dt>How many people visit the National Parks each year?</dt>
+        <dd>In 2021 297,115,406 people visited the National Parks.</dd>
+        <dt>What is the most visited National Park?</dt>
+        <dd>Blue Ridge Parkway was the most visited National Park in 2021 with 15.9 million visits.</dd>
+        <dt>Who is the director of the National Park Service?</dt>
+        <dd>Charles F. Sams III is the director of the National Park Service.</dd>
+        <dt>How many employees are in the National Park Service?</dt>
+        <dd>Around 20,000 employees and more than 279,000 volunteers.</dd>
+        <dt>Which National Park was the nations first?</dt>
+        <dd>Yellowstone National Park is the nations first ever National Park.</dd>
+        <dt>How many acres are in the National Park System?</dt>
+        <dd>Over 85 million acres of land are in the National Park System.</dd>
+        <dt>What is the largest National Park?</dt>
+        <dd>Wrangell-St. Elias National Park and Reserve in Alaska is the largest National Park.</dd>
+        <dt>What is the smallest National Park?</dt>
+        <dd>Thaddeus Kosciuszko National Memorial is the smallest National Park.</dd>
+        <dt>How many of the highest waterfalls are located at Yosemite National Park?</dt>
+        <dd>3 of the highest waterfalls in the world are located at Yosemite National Park.</dd>
+        <dt>Which of the National Parks contains one of the Natural Wonders of the World?</dt>
+        <dd>The Grand Canyon in Grand Canyon National Park is one of the 7 Natural Wonders of the World.</dd>
+    </dl>
+    <button type="button" id="toggle-answers">Show Answers</button>
+<style>
+    .invisible {
+        visibility: hidden;
+    }
+    .clicked {
+        background: yellow;
+    }
+</style>
+<script>
+    $('#toggle-answers').click(function () {
+      $('dd').toggleClass('invisible');
+    });
+    $('dt').click(function () {
+        $(this).toggleClass('clicked');
+    });
+</script>
+</body>
+</html>
