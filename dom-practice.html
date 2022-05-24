@@ -88,34 +88,38 @@
         }
     });
 
-    let h1Btn = document.getElementById('toggleH1');
-
-    function changeH1Size () {
-        let allH1s = document.getElementsByTagName('h1');
-        for (let h1 of allH1s) {
-            if (h1.style.fontSize !== '10px') {
-                h1.style.fontSize = '10px';
-            } else {
-                h1.style.fontSize = '20px';
-            }
-        }
-    };
-
-    let intervalID = setInterval(changeH1Size, 1000);
-
-    h1Btn.addEventListener('click', function () {
-        if (intervalID === null) {
-            intervalID = setInterval(changeH1Size, 1000);
-        } else {
-            clearInterval(intervalID);
-            intervalID = null;
-        }
-    });
+    // let h1Btn = document.getElementById('toggleH1');
+    //
+    // function changeH1Size () {
+    //     let allH1s = document.getElementsByTagName('h1');
+    //     for (let h1 of allH1s) {
+    //         if (h1.style.fontSize !== '10px') {
+    //             h1.style.fontSize = '10px';
+    //         } else {
+    //             h1.style.fontSize = '20px';
+    //         }
+    //     }
+    // };
+    //
+    // let intervalID = setInterval(changeH1Size, 1000);
+    //
+    // h1Btn.addEventListener('click', function () {
+    //     if (intervalID === null) {
+    //         intervalID = setInterval(changeH1Size, 1000);
+    //     } else {
+    //         clearInterval(intervalID);
+    //         intervalID = null;
+    //     }
+    // });
 
     let fourthDiv = document.getElementsByClassName('question')[4];
     fourthDiv.addEventListener('mouseenter', function () {
         alert('CONGRATULATIONS ON YOUR NEW CRUISE!');
     });
+
+    document.getElementById('google').addEventListener('click', function () {
+        document.location.href = 'https://google.com'
+    })
 
 </script>
 </body>
