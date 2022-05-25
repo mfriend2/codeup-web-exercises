@@ -29,6 +29,8 @@
         </div>
     </div>
     <br>
+    <h1 style="color: black">INVENTORY</h1>
+    <br>
     <table class="table table-dark" id="products">
         <thead>
         <th>Title</th>
@@ -39,7 +41,7 @@
         <tbody id="insertProducts">
         </tbody>
     </table>
-    <button type="button" id="refresh-btn">Refresh Table</button>
+    <button type="button" id="refresh-btn">See Updated Inventory</button>
 
 </main>
 
@@ -55,8 +57,8 @@
             $('#insertProducts').html('');
             data.forEach(function (el) {
                 let title = '<tr>' + '<td>' + el.title + '</td>'
-                let price = '<td>' + el.price + '</td>';
-                let quantity = '<td>' + el.quantity + '</td>';
+                let price = '<td>' + '$' + el.price + '</td>';
+                let quantity = '<td>' + el.quantity + ' in stock' + '</td>';
                 let categories = '<td>' + el.categories + '</td>' + '</tr>';
                 $('#insertProducts').append(title + quantity + price + categories)
             })
