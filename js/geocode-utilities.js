@@ -52,11 +52,11 @@ function reverseGeocode(coordinates, token) {
         });
 }
 
-const accessToken = MAPBOX_API_KEY;
-mapboxgl.accessToken = accessToken;
-const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 10,
-    center: [-98.4916, 29.4252]
-});
+// const accessToken = MAPBOX_API_KEY;
+// mapboxgl.accessToken = accessToken;
+// const map = new mapboxgl.Map({
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/streets-v9',
+//     zoom: 10,
+//     center: [-98.4916, 29.4252]
+// });
