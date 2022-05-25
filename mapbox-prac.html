@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+    <script src="js/keys.js"></script>
+</head>
+<body>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<div id='map' style='width: 95vw; height: 75vh; margin: auto'></div>
+<h1 id="place"></h1>
+<script src="js/geocode-utilities.js"></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_API_KEY;
+    const MAP = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4946, 29.4252], // starting position [lng, lat]
+        zoom: 9// starting zoom
+    });
+    const MARKER = new mapboxgl.Marker()
+        .setLngLat([-98.4916, 29.4260])
+        .setDraggable(true)
+        .addTo(MAP);
+
+    // const CODEUP_POPUP = new mapboxgl.Popup()
+    // .setLngLat([-98, 29])
+    // .setHTML('<p>Hello</p>')
+    // .addTo(MAP)
+
+    // const POPUP = new mapboxgl.Popup()
+    // .setHTML('<p>This is San Antonio, TX</p>')
+    // MARKER.setPopup(POPUP)
+
+    MAP.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        })
+    );
+
+    geocode('12167 Idalia St, Brighton,CO 80603', MAPBOX_API_KEY).then(function (data) {
+        console.log(data);
+        const POPUP_MOMS = new mapboxgl.Popup()
+        .setLngLat(data)
+            .setHTML('<p> Moms old house </p>')
+        .addTo(MAP);
+    })
+    reverseGeocode({lat: 52.335, lng: 4.8659}, MAPBOX_API_KEY).then(function (location) {
+        console.log(location);
+    })
+
+    let LONG_LAT = [];
+
+    MARKER.on('dragend', function() {
+        LONG_LAT = MARKER.getLngLat();
+        document.getElementById('place').innerHTML = LONG_LAT.lng + ', ' + LONG_LAT.lat;
+        MAP.flyTo({center: [LONG_LAT.lng, LONG_LAT.lat]});
+        reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
+            document.getElementById('place').innerHTML = data;
+        })
+    })
+</script>
+</body>
+</html>
