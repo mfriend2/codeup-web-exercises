@@ -48,7 +48,8 @@
       name: "Hell's Kitchen",
       address: "3570 Las Vegas Blvd S, Las Vegas, NV 89109",
       price: "$$$",
-      favItem: "Sticky Toffee Pudding"
+      favItem: "Sticky Toffee Pudding",
+      image: "img/gordon-ramsay.gif"
     },  {
       name: "Okinawa Japanese Cuisine",
       address: "2301 E Colfax Ave, Denver, CO 80206",
@@ -75,7 +76,7 @@
               .setDraggable(false)
               .addTo(map);
       const POPUP = new mapboxgl.Popup()
-              .setHTML('<p>' + restaurant.name + '<br>' + 'Price Range: ' + restaurant.price + '<br>' + 'Favorite Menu Item: ' + restaurant.favItem + '</p>')
+              .setHTML('<p>' + restaurant.name + '<br>' + 'Price Range: ' + restaurant.price + '<br>' + 'Favorite Menu Item: ' + restaurant.favItem + '<img src="' + restaurant.image + '">' + '</p>')
       MARKER.setPopup(POPUP);
       let hideBtn = document.getElementById('hide-btn')
       hideBtn.addEventListener('click', function () {
