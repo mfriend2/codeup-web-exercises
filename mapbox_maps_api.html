@@ -1,120 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mapbox Restaurants</title>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
-  <script src="js/keys.js"></script>
-  <link rel="stylesheet" href="css/mapbox_maps.css">
+    <meta charset="UTF-8">
+    <title>Mapbox Restaurants</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+    <script src="js/keys.js"></script>
+    <link rel="stylesheet" href="css/mapbox_maps.css">
 </head>
 <body>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<link rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css">
 <div id='map' style='width: 75vw; height: 90vh;'></div>
 <select class="form-select" aria-label="Default select example" id="select-btn">
-  <option selected>Choose Zoom Level</option>
-  <option value="5">5</option>
-  <option value="10">10</option>
-  <option value="15">15</option>
+    <option selected>Choose Zoom Level</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
 </select>
 <button type="submit" id="submit-btn"> Adjust Zoom</button>
 <button type="button" id="hide-btn">Hide Markers</button>
 <script src="js/geocode-utilities.js"></script>
 <script>
-  mapboxgl.accessToken = MAPBOX_API_KEY;
-  let map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/light-v10', // style URL
-    center: [-115.173110426, 36.1156808385], // starting position [lng, lat]
-    zoom: 10, // starting zoom
-  });
-  map.addControl(
-          new MapboxGeocoder({
+    mapboxgl.accessToken = MAPBOX_API_KEY;
+    let map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/light-v10', // style URL
+        center: [-115.173110426, 36.1156808385], // starting position [lng, lat]
+        zoom: 10, // starting zoom
+    });
+    map.addControl(
+        new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl
-          })
-  );
+        })
+    );
 
-  console.log(document.getElementById('select-btn').value);
-  let submitBtn = document.getElementById("submit-btn");
-  submitBtn.addEventListener('click', function () {
-    let zoomLvl = document.getElementById('select-btn').value;
-    map.zoomTo(zoomLvl);
-  });
-
-  let favRestaurants = [
-    {
-      name: "Hell's Kitchen",
-      address: "3570 Las Vegas Blvd S, Las Vegas, NV 89109",
-      price: "$$$",
-      favItem: "Sticky Toffee Pudding",
-      image: "img/gordon-ramsay.gif"
-    },  {
-      name: "Okinawa Japanese Cuisine",
-      address: "2301 E Colfax Ave, Denver, CO 80206",
-      price: "$$",
-      favItem: "Shrimp Tempura Roll"
-    },  {
-      name: "Manasiri's Crepes & Sandwiches",
-      address: "321 Alvarado St, Monterey, CA 93940",
-      price: "$",
-      favItem: "Chocolate & Strawberry Crepe"
-    }
-  ]
-  favRestaurants.forEach(function (restaurant) {
-    geocode(restaurant.address, MAPBOX_API_KEY).then(function (data) {
-      console.log(data);
-      let el = document.createElement('div');
-      el.className = 'marker';
-      el.style.backgroundImage = 'url(img/place-marker.svg)';
-      el.style.width = '45px';
-      el.style.height = '45px';
-      el.style.color = "black";
-      const MARKER = new mapboxgl.Marker(el)
-              .setLngLat(data)
-              .setDraggable(false)
-              .addTo(map);
-      const POPUP = new mapboxgl.Popup()
-              .setHTML('<p>' + restaurant.name + '<br>' + 'Price Range: ' + restaurant.price + '<br>' + 'Favorite Menu Item: ' + restaurant.favItem + '<img src="' + restaurant.image + '">' + '</p>')
-      MARKER.setPopup(POPUP);
-      let hideBtn = document.getElementById('hide-btn')
-      hideBtn.addEventListener('click', function () {
-        MARKER.remove();
+    console.log(document.getElementById('select-btn').value);
+    let submitBtn = document.getElementById("submit-btn");
+    submitBtn.addEventListener('click', function () {
+        let zoomLvl = document.getElementById('select-btn').value;
+        map.zoomTo(zoomLvl);
     });
-    })
-  })
 
-  // geocode('3570 Las Vegas Blvd S, Las Vegas, NV 89109', MAPBOX_API_KEY).then(function (data) {
-  //   console.log(data);
-  //   const MARKER_HK = new mapboxgl.Marker()
-  //           .setLngLat(data)
-  //           .setDraggable(false)
-  //           .addTo(map);
-  //   const POPUP_HK = new mapboxgl.Popup()
-  //           .setHTML('<p>Hell\'s Kitchen</p>')
-  //   MARKER_HK.setPopup(POPUP_HK);
-  // });
-  // geocode('2301 E Colfax Ave, Denver, CO 80206', MAPBOX_API_KEY).then(function (data) {
-  //   console.log(data);
-  //   const MARKER_OK = new mapboxgl.Marker()
-  //           .setLngLat(data)
-  //           .setDraggable(false)
-  //           .addTo(map);
-  //   const POPUP_OK = new mapboxgl.Popup()
-  //           .setHTML('<p>Okinawa Japanese Cuisine</p>')
-  //   MARKER_OK.setPopup(POPUP_OK);
-  // });
-  // geocode('321 Alvarado St, Monterey, CA 93940', MAPBOX_API_KEY).then(function (data) {
-  //   console.log(data);
-  //   const MARKER_MC = new mapboxgl.Marker()
-  //           .setLngLat(data)
-  //           .setDraggable(false)
-  //           .addTo(map);
-  //   const POPUP_MC = new mapboxgl.Popup()
-  //           .setHTML('<p>Manasiri\'s Crepes & Sandwiches</p>')
-  //   MARKER_MC.setPopup(POPUP_MC);
-  // });
+    let favRestaurants = [
+        {
+            name: "Hell's Kitchen",
+            address: "3570 Las Vegas Blvd S, Las Vegas, NV 89109",
+            price: "$$$",
+            favItem: "Sticky Toffee Pudding",
+            image: "img/gordon-ramsay.gif"
+        }, {
+            name: "Okinawa Japanese Cuisine",
+            address: "2301 E Colfax Ave, Denver, CO 80206",
+            price: "$$",
+            favItem: "Shrimp Tempura Roll",
+            image: "img/sushi.jpg"
+        }, {
+            name: "Manasiri's Crepes & Sandwiches",
+            address: "321 Alvarado St, Monterey, CA 93940",
+            price: "$",
+            favItem: "Chocolate & Strawberry Crepe",
+            image: "img/crepes.jpg"
+        }
+    ]
+    favRestaurants.forEach(function (restaurant) {
+        geocode(restaurant.address, MAPBOX_API_KEY).then(function (data) {
+            console.log(data);
+            let el = document.createElement('div');
+            el.className = 'marker';
+            el.style.backgroundImage = 'url(img/place-marker.svg)';
+            el.style.width = '45px';
+            el.style.height = '45px';
+            el.style.color = "black";
+            const MARKER = new mapboxgl.Marker(el)
+                .setLngLat(data)
+                .setDraggable(false)
+                .addTo(map);
+            const POPUP = new mapboxgl.Popup()
+                .setHTML('<p>' + restaurant.name + '<br>' + 'Price Range: ' + restaurant.price + '<br>' + 'Favorite Menu Item: ' + restaurant.favItem + '<img src="' + restaurant.image + '">' + '</p>')
+            MARKER.setPopup(POPUP);
+            let hideBtn = document.getElementById('hide-btn')
+            hideBtn.addEventListener('click', function () {
+                MARKER.remove();
+            });
+        })
+    })
+
+    // geocode('3570 Las Vegas Blvd S, Las Vegas, NV 89109', MAPBOX_API_KEY).then(function (data) {
+    //   console.log(data);
+    //   const MARKER_HK = new mapboxgl.Marker()
+    //           .setLngLat(data)
+    //           .setDraggable(false)
+    //           .addTo(map);
+    //   const POPUP_HK = new mapboxgl.Popup()
+    //           .setHTML('<p>Hell\'s Kitchen</p>')
+    //   MARKER_HK.setPopup(POPUP_HK);
+    // });
+    // geocode('2301 E Colfax Ave, Denver, CO 80206', MAPBOX_API_KEY).then(function (data) {
+    //   console.log(data);
+    //   const MARKER_OK = new mapboxgl.Marker()
+    //           .setLngLat(data)
+    //           .setDraggable(false)
+    //           .addTo(map);
+    //   const POPUP_OK = new mapboxgl.Popup()
+    //           .setHTML('<p>Okinawa Japanese Cuisine</p>')
+    //   MARKER_OK.setPopup(POPUP_OK);
+    // });
+    // geocode('321 Alvarado St, Monterey, CA 93940', MAPBOX_API_KEY).then(function (data) {
+    //   console.log(data);
+    //   const MARKER_MC = new mapboxgl.Marker()
+    //           .setLngLat(data)
+    //           .setDraggable(false)
+    //           .addTo(map);
+    //   const POPUP_MC = new mapboxgl.Popup()
+    //           .setHTML('<p>Manasiri\'s Crepes & Sandwiches</p>')
+    //   MARKER_MC.setPopup(POPUP_MC);
+    // });
 </script>
 </body>
 </html>
