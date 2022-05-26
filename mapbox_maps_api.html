@@ -6,19 +6,28 @@
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
   <script src="js/keys.js"></script>
+  <link rel="stylesheet" href="css/mapbox_maps.css">
 </head>
 <body>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
-<div id='map' style='width: 75vw; height: 75vh;margin: auto'></div>
+<div id='map' style='width: 75vw; height: 90vh;'></div>
+<select class="form-select" aria-label="Default select example" id="select-btn">
+  <option selected>Choose Zoom Level</option>
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="15">15</option>
+</select>
+<button type="submit" id="submit-btn"> Adjust Zoom</button>
+<button type="button" id="hide-btn">Hide Markers</button>
 <script src="js/geocode-utilities.js"></script>
 <script>
   mapboxgl.accessToken = MAPBOX_API_KEY;
-  const map = new mapboxgl.Map({
+  let map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    style: 'mapbox://styles/mapbox/light-v10', // style URL
     center: [-115.173110426, 36.1156808385], // starting position [lng, lat]
-    zoom: 10 // starting zoom
+    zoom: 10, // starting zoom
   });
   map.addControl(
           new MapboxGeocoder({
@@ -26,34 +35,55 @@
             mapboxgl: mapboxgl
           })
   );
+
+  console.log(document.getElementById('select-btn').value);
+  let submitBtn = document.getElementById("submit-btn");
+  submitBtn.addEventListener('click', function () {
+    let zoomLvl = document.getElementById('select-btn').value;
+    map.zoomTo(zoomLvl);
+  });
+
   let favRestaurants = [
     {
       name: "Hell's Kitchen",
       address: "3570 Las Vegas Blvd S, Las Vegas, NV 89109",
       price: "$$$",
-      menu: 'https://marketeammenucaesarspalacehellskitchen.com/'
+      favItem: "Sticky Toffee Pudding"
     },  {
       name: "Okinawa Japanese Cuisine",
       address: "2301 E Colfax Ave, Denver, CO 80206",
-      price: "$$"
+      price: "$$",
+      favItem: "Shrimp Tempura Roll"
     },  {
       name: "Manasiri's Crepes & Sandwiches",
       address: "321 Alvarado St, Monterey, CA 93940",
-      price: "$"
+      price: "$",
+      favItem: "Chocolate & Strawberry Crepe"
     }
   ]
   favRestaurants.forEach(function (restaurant) {
     geocode(restaurant.address, MAPBOX_API_KEY).then(function (data) {
       console.log(data);
-      const MARKER = new mapboxgl.Marker()
+      let el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = 'url(img/place-marker.svg)';
+      el.style.width = '45px';
+      el.style.height = '45px';
+      el.style.color = "black";
+      const MARKER = new mapboxgl.Marker(el)
               .setLngLat(data)
               .setDraggable(false)
               .addTo(map);
       const POPUP = new mapboxgl.Popup()
-              .setHTML('<p>' + restaurant.name + '<br>' + 'Price Range: ' + restaurant.price + '</p>')
+              .setHTML('<p>' + restaurant.name + '<br>' + 'Price Range: ' + restaurant.price + '<br>' + 'Favorite Menu Item: ' + restaurant.favItem + '</p>')
       MARKER.setPopup(POPUP);
+      let hideBtn = document.getElementById('hide-btn')
+      hideBtn.addEventListener('click', function () {
+        MARKER.remove();
     });
+    })
   })
+
   // geocode('3570 Las Vegas Blvd S, Las Vegas, NV 89109', MAPBOX_API_KEY).then(function (data) {
   //   console.log(data);
   //   const MARKER_HK = new mapboxgl.Marker()

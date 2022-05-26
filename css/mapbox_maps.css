@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+#map {
+    display: flex;
+    margin: 4em auto 0em auto;
+}
+.form-select {
+    background-color: black;
+    color: white;
+    width: 25%;
+    margin: 0em 0em 0em 11.2em;
+    font-size: 1em;
+    border: 1px solid white;
+    border-radius: 150px;
+    cursor: pointer;
+    text-align: center;
+}
+#hide-btn {
+    background-color: black;
+    color: white;
+    width: 25%;
+    font-size: 1em;
+    border: 1px solid white;
+    border-radius: 150px;
+    cursor: pointer;
+    margin: .5em 0em;
+}
+#submit-btn {
+    background-color: black;
+    color: white;
+    width: 25%;
+    font-size: 1em;
+    border: 1px solid white;
+    border-radius: 150px;
+    cursor: pointer;
+}
+
