@@ -86,5 +86,3 @@ $('#search-btn').click(function () {
         })
     })
 })
-// let placeSearched = $('#search-input')
-// geocode('')
