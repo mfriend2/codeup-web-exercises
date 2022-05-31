@@ -15,6 +15,10 @@ body {
 }
 #search-btn, #search-input {
     margin: 0em .5em;
+    background: rgba(6,2,2,.2);
+    border:  rgba(6,2,2,.2);
+    cursor: pointer;
+    color: white;
 }
 #cards {
     display: flex;
