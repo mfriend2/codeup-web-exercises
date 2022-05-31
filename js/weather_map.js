@@ -13,6 +13,7 @@ function mapDisplay (lat = 29.426827, lon = -98.489615){
         console.log(results.daily[0].weather[0].icon);
         const MARKER = new mapboxgl.Marker()
             .setLngLat([lon, lat])
+            .setDraggable(true)
             .addTo(map);
         reverseGeocode({lat: results.lat, lng: results.lon}, MAPBOX_API_KEY).then(function (data) {
             console.log(data);
@@ -71,7 +72,6 @@ function mapDisplay (lat = 29.426827, lon = -98.489615){
     })
 }
 mapDisplay();
-
 $('#search-btn').click(function () {
     geocode($('#search-input').val(), MAPBOX_API_KEY).then(function (data) {
         console.log(data);
