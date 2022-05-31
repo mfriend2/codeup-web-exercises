@@ -17,7 +17,7 @@ function mapDisplay (lat = 29.426827, lon = -98.489615){
             .addTo(map);
         reverseGeocode({lat: results.lat, lng: results.lon}, MAPBOX_API_KEY).then(function (data) {
             console.log(data);
-            $('#current-city').html('Current Location: ' +  data)
+            $('#current-city').html('Current City: ' +  data)
         })
         let day1 = new Date(results.daily[0].dt * 1000);
         $('#day-1').children().first().html(day1.toDateString());
@@ -82,7 +82,7 @@ $('#search-btn').click(function () {
             .addTo(map);
         mapDisplay(data[1], data[0]);
         reverseGeocode({lat: data[1], lng: data[0]}, MAPBOX_API_KEY).then(function (data){
-            $('#current-city').html('Current Location: ' +  data)
+            $('#current-city').html('Current City: ' +  data)
         })
     })
 })
