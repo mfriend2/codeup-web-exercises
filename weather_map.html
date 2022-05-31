@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1" style="color: white">Weather App</span>
         <span style="color: white" id="current-city"></span>
@@ -85,13 +85,12 @@
             </ul>
         </div>
     </section>
-    <div id='map' style='width: 100%; height: 34em;' class="mb-2"></div>
+    <div id='map' style='width: 75%; height: 34em;' class="mb-2 mx-auto"></div>
 </main>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/geocode-utilities.js"></script>
-<script src="js/weather_map.js"></script>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibWZyaWVuZDIiLCJhIjoiY2wzbHk4emptMDJqeDNrcDRzeHBqMmZmayJ9.UpvSMVoGK_KiqNkdkoQKaw';
     const map = new mapboxgl.Map({
@@ -101,6 +100,7 @@
         zoom: 12 // starting zoom
     });
 </script>
+<script src="js/weather_map.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>

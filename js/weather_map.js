@@ -1,7 +1,8 @@
 "use strict";
 
 const URL = 'https://api.openweathermap.org/data/2.5/onecall'
-function mapDisplay (lat = 29.426827, lon = -98.489615){
+
+function mapDisplay(lat = 29.426827, lon = -98.489615) {
     $.get(URL, {
         APPID: OPEN_WEATHER_API_KEY,
         lat: lat,
@@ -17,8 +18,25 @@ function mapDisplay (lat = 29.426827, lon = -98.489615){
             .addTo(map);
         reverseGeocode({lat: results.lat, lng: results.lon}, MAPBOX_API_KEY).then(function (data) {
             console.log(data);
-            $('#current-city').html('Current City: ' +  data)
+            $('#current-city').html('Current City: ' + data)
         })
+
+        function setBack() {
+            if (results.daily[0].weather[0].description.includes('rain')) {
+                $('body').css('background-image', "url(../img/rainy.gif)")
+                map.setStyle('mapbox://styles/mapbox/navigation-night-v1')
+            } else if (results.daily[0].weather[0].description.includes('sun' || 'clear')) {
+                $('body').css('background-image', "url(../img/sunny.gif)")
+                map.setStyle('mapbox://styles/mapbox/navigation-day-v1')
+            }
+            else if (results.daily[0].weather[0].description.includes('cloud')) {
+                $('body').css('background-image', "url(../img/cloudy.gif)")
+                map.setStyle('mapbox://styles/mapbox/navigation-night-v1')
+            }
+        };
+
+        setBack();
+
         let day1 = new Date(results.daily[0].dt * 1000);
         $('#day-1').children().first().html(day1.toDateString());
         $('#day-1').children().first().css('text-align', 'center');
@@ -71,6 +89,7 @@ function mapDisplay (lat = 29.426827, lon = -98.489615){
         $('#day-5').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + results.daily[4].pressure + '</span>')
     })
 }
+
 mapDisplay();
 $('#search-btn').click(function () {
     geocode($('#search-input').val(), MAPBOX_API_KEY).then(function (data) {
@@ -81,8 +100,8 @@ $('#search-btn').click(function () {
             .setLngLat([data[0], data[1]])
             .addTo(map);
         mapDisplay(data[1], data[0]);
-        reverseGeocode({lat: data[1], lng: data[0]}, MAPBOX_API_KEY).then(function (data){
-            $('#current-city').html('Current City: ' +  data)
+        reverseGeocode({lat: data[1], lng: data[0]}, MAPBOX_API_KEY).then(function (data) {
+            $('#current-city').html('Current City: ' + data)
         })
     })
 })

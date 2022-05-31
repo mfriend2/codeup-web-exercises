@@ -4,6 +4,9 @@
 body {
     padding: 0;
     margin: 0;
+    background-size: cover;
+    color: white;
+    /*background-image: url("../img/rainy.gif");*/
 }
 #search {
     display: flex;
@@ -28,4 +31,12 @@ body {
 }
 .card-header {
     font-weight: bold;
+}
+.navbar {
+    background: rgba(6,2,2,.2);
+}
+.card, .list-group, .list-group-item, .card-header {
+    background: rgba(6,2,2,.1);
+    color: white;
+    border: none;
 }
