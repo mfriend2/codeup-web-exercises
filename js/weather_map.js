@@ -52,9 +52,9 @@ function mapDisplay(lat = 29.426827, lon = -98.489615) {
         $('#icon-1').attr('src', "http://openweathermap.org/img/wn/" + results.daily[0].weather[0].icon + "@2x.png")
         $('#day-1').children().children().first().css('text-align', 'center')
         $('#day-1').children().children().first().next().html('Description: ' + '<span class="fw-bold">' + results.daily[0].weather[0].description + '</span>')
-        $('#day-1').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[0].humidity + '</span>')
-        $('#day-1').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[0].wind_speed + '</span>')
-        $('#day-1').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + results.daily[0].pressure + '</span>')
+        $('#day-1').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[0].humidity + '%' + '</span>')
+        $('#day-1').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[0].wind_speed + ' mph' + '</span>')
+        $('#day-1').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + (results.daily[0].pressure / 30).toFixed(2) + ' inHg' + '</span>')
         let day2 = new Date(results.daily[1].dt * 1000);
         $('#day-2').children().first().html(day2.toDateString());
         $('#day-2').children().first().css('text-align', 'center');
@@ -62,9 +62,9 @@ function mapDisplay(lat = 29.426827, lon = -98.489615) {
         $('#icon-2').attr('src', "http://openweathermap.org/img/wn/" + results.daily[1].weather[0].icon + "@2x.png")
         $('#day-2').children().children().first().css('text-align', 'center')
         $('#day-2').children().children().first().next().html('Description: ' + '<span class="fw-bold">' + results.daily[1].weather[0].description + '</span>')
-        $('#day-2').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[1].humidity + '</span>')
-        $('#day-2').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[1].wind_speed + '</span>')
-        $('#day-2').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + results.daily[1].pressure + '</span>')
+        $('#day-2').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[1].humidity + '%' + '</span>')
+        $('#day-2').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[1].wind_speed + ' mph' + '</span>')
+        $('#day-2').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + (results.daily[1].pressure / 30).toFixed(2) + ' inHg' + '</span>')
         let day3 = new Date(results.daily[2].dt * 1000);
         $('#day-3').children().first().html(day3.toDateString());
         $('#day-3').children().first().css('text-align', 'center');
@@ -72,9 +72,9 @@ function mapDisplay(lat = 29.426827, lon = -98.489615) {
         $('#icon-3').attr('src', "http://openweathermap.org/img/wn/" + results.daily[2].weather[0].icon + "@2x.png")
         $('#day-3').children().children().first().css('text-align', 'center')
         $('#day-3').children().children().first().next().html('Description: ' + '<span class="fw-bold">' + results.daily[2].weather[0].description + '</span>')
-        $('#day-3').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[2].humidity + '</span>')
-        $('#day-3').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[2].wind_speed + '</span>')
-        $('#day-3').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + results.daily[2].pressure + '</span>')
+        $('#day-3').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[2].humidity + '%' + '</span>')
+        $('#day-3').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[2].wind_speed + ' mph' + '</span>')
+        $('#day-3').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + (results.daily[2].pressure / 30).toFixed(2) + ' inHg' + '</span>')
         let day4 = new Date(results.daily[3].dt * 1000);
         $('#day-4').children().first().html(day4.toDateString());
         $('#day-4').children().first().css('text-align', 'center');
@@ -82,9 +82,9 @@ function mapDisplay(lat = 29.426827, lon = -98.489615) {
         $('#icon-4').attr('src', "http://openweathermap.org/img/wn/" + results.daily[3].weather[0].icon + "@2x.png")
         $('#day-4').children().children().first().css('text-align', 'center')
         $('#day-4').children().children().first().next().html('Description: ' + '<span class="fw-bold">' + results.daily[3].weather[0].description + '</span>')
-        $('#day-4').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[3].humidity + '</span>')
-        $('#day-4').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[3].wind_speed + '</span>')
-        $('#day-4').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + results.daily[3].pressure + '</span>')
+        $('#day-4').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[3].humidity + '%' + '</span>')
+        $('#day-4').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[3].wind_speed + ' mph' + '</span>')
+        $('#day-4').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + (results.daily[3].pressure / 30).toFixed(2) + ' inHg' + '</span>')
         let day5 = new Date(results.daily[4].dt * 1000);
         $('#day-5').children().first().html(day5.toDateString());
         $('#day-5').children().first().css('text-align', 'center');
@@ -92,9 +92,9 @@ function mapDisplay(lat = 29.426827, lon = -98.489615) {
         $('#icon-5').attr('src', "http://openweathermap.org/img/wn/" + results.daily[4].weather[0].icon + "@2x.png")
         $('#day-5').children().children().first().css('text-align', 'center')
         $('#day-5').children().children().first().next().html('Description: ' + '<span class="fw-bold">' + results.daily[4].weather[0].description + '</span>')
-        $('#day-5').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[4].humidity + '</span>')
-        $('#day-5').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[4].wind_speed + '</span>')
-        $('#day-5').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + results.daily[4].pressure + '</span>')
+        $('#day-5').children().children().first().next().next().html('Humidity: ' + '<span class="fw-bold">' + results.daily[4].humidity + '%' + '</span>')
+        $('#day-5').children().children().first().next().next().next().html('Wind Speed: ' + '<span class="fw-bold">' + results.daily[4].wind_speed + ' mph' + '</span>')
+        $('#day-5').children().children().first().next().next().next().next().html('Pressure: ' + '<span class="fw-bold">' + (results.daily[4].pressure / 30).toFixed(2) + ' inHg' + '</span>')
     })
 }
 
