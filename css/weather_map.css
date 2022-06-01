@@ -44,3 +44,6 @@ body {
     color: white;
     border: none;
 }
+#search > span {
+    background: rgba(6,2,2,.1);
+}
