@@ -28,16 +28,13 @@ function mapDisplay(lat = 29.426827, lon = -98.489615) {
             } else if (results.daily[0].weather[0].description.includes('clear')) {
                 $('body').css('background-image', "url(../img/sunny.gif)")
                 map.setStyle('mapbox://styles/mapbox/navigation-day-v1')
-            }
-            else if (results.daily[0].weather[0].description.includes('sun')) {
+            } else if (results.daily[0].weather[0].description.includes('sun')) {
                 $('body').css('background-image', "url(../img/sunny.gif)")
                 map.setStyle('mapbox://styles/mapbox/navigation-day-v1')
-            }
-            else if (results.daily[0].weather[0].description.includes('cloud')) {
+            } else if (results.daily[0].weather[0].description.includes('cloud')) {
                 $('body').css('background-image', "url(../img/cloudy.gif)")
                 map.setStyle('mapbox://styles/mapbox/navigation-night-v1')
-            }
-            else if (results.daily[0].weather[0].description.includes('snow')) {
+            } else if (results.daily[0].weather[0].description.includes('snow')) {
                 $('body').css('background-image', "url(../img/snowing.gif)")
                 map.setStyle('mapbox://styles/mapbox/light-v10')
             }

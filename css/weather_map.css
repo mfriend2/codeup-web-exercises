@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     padding: 0;
     margin: 0;
@@ -8,42 +9,51 @@ body {
     color: white;
     /*background-image: url("../img/rainy.gif");*/
 }
+
 #search {
     display: flex;
     flex-direction: row;
     margin: 2em 0em;
 }
+
 #search-btn, #search-input {
     margin: 0em .5em;
-    background: rgba(6,2,2,.2);
-    border:  rgba(6,2,2,.2);
+    background: rgba(6, 2, 2, .2);
+    border: rgba(6, 2, 2, .2);
     cursor: pointer;
     color: white;
 }
+
 #cards {
     display: flex;
     flex-direction: row;
     margin: 1em 0em;
 }
+
 #day-1, #day-2, #day-3, #day-4 {
     width: 18rem;
     margin: 0em 1em 0em 0em;
 }
+
 #day-5 {
     width: 18rem;
     margin: 0em;
 }
+
 .card-header {
     font-weight: bold;
 }
+
 .navbar {
-    background: rgba(6,2,2,.2);
+    background: rgba(6, 2, 2, .2);
 }
+
 .card, .list-group, .list-group-item, .card-header {
-    background: rgba(6,2,2,.1);
+    background: rgba(6, 2, 2, .1);
     color: white;
     border: none;
 }
+
 #search > span {
-    background: rgba(6,2,2,.1);
+    background: rgba(6, 2, 2, .1);
 }
