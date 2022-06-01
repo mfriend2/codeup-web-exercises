@@ -33,7 +33,7 @@ function mapDisplay(lat = 29.426827, lon = -98.489615) {
                 map.setStyle('mapbox://styles/mapbox/navigation-day-v1')
             } else if (results.daily[0].weather[0].description.includes('cloud')) {
                 $('body').css('background-image', "url(../img/cloudy.gif)")
-                map.setStyle('mapbox://styles/mapbox/navigation-night-v1')
+                map.setStyle('mapbox://styles/mapbox/dark-v10')
             } else if (results.daily[0].weather[0].description.includes('snow')) {
                 $('body').css('background-image', "url(../img/snowing.gif)")
                 map.setStyle('mapbox://styles/mapbox/light-v10')
