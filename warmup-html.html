@@ -6,5 +6,10 @@
 </head>
 <body>
 <script src="js/warmups.js"></script>
+<script>
+    "use strict";
+    const URL = 'https://quotes.rest/qod'
+    fetch(URL).then(data => data.json()).then(data => console.log(data))
+</script>
 </body>
 </html>
